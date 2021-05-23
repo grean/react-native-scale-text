@@ -6,7 +6,8 @@
   "source": "src/index",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,16 @@
     "@babel/core": "~7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
-    "typescript": "4.2.4"
-  }
+    "typescript": "4.2.4",
+    "release-it": "*"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
 }
