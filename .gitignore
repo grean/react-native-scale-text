@@ -1,6 +1,9 @@
-node_modules
-dist
+lib/
+node_modules/
+dist/
+
 tsconfig.tsbuildinfo
 lerna-debug.log
 .DS_Store
-lib
+yarn.lock
+package-lock.json
