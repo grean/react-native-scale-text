@@ -3,7 +3,7 @@ import { View, StyleSheet, PixelRatio, Text, StatusBar, Dimensions, Platform } f
 
 import useDimensions from './src/hooks/useDimensions'
 import useLog from './src/hooks/useLog'
-import ScaleText from '@grean/react-native-scale-text'
+import ScaleText from '../src/ScaleText'
 
 const round2 = (val: number): number => Math.round(val * 100) / 100
 
