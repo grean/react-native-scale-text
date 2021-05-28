@@ -16,8 +16,7 @@ export default function App() {
   const { height, width } = dimensions.window
 
   const responsiveFont = isLandscape ? responsiveScreenFontSize(2.3) : responsiveScreenFontSize(2.75)
-  const scaleTextFontSize = isLandscape ? 260 : 144
-  // const scaleTextFontSize = isLandscape ? 130 : 72
+  const scaleTextFontSize = isLandscape ? 130 : 72
   const fixedFontSize = isLandscape ? 19.3 : 24
 
   const infos = `FontScale ${PixelRatio.getFontScale()} Density ${PixelRatio.get()}
@@ -61,6 +60,9 @@ export default function App() {
             fontSize: scaleTextFontSize,
             // onPress: () => (alert('lol')),
             // padding: '5%',
+            containerStyle: {
+              // justifyContent: 'flex-end',
+            },
             textStyle: {
               backgroundColor: 'green'
             }

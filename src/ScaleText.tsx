@@ -12,17 +12,14 @@ type ParentLayout = {
   height: number
 }
 
-export type TextStyleType = {
-  fontFamily?: string
-  // fontSize?: number
-  backgroundColor?: string
-  color?: string
-}
+export type ContairnerStyleType = {}
+
+export type TextStyleType = {}
 
 interface ScaleTextProps {
   allowFontScaling?: boolean
   children: React.ReactNode
-  containerStyle?: TextStyleType
+  containerStyle?: ContairnerStyleType
   fontSize: number
   padding?: string
   onPress?: () => void
@@ -35,13 +32,14 @@ const ScaleText = ({
   children,
   containerStyle,
   debug = false,
-  fontSize,
+  fontSize = 80,
   onPress,
   padding = '0%',
   textStyle,
 }: ScaleTextProps) => {
   const [layout, setLayout] = useState<ParentLayout | null>(null);
   useLog(`ScaleText Layout widthDp ${layout?.width} heightDp ${layout?.height}`)
+  console.log(containerStyle)
 
   const width = (layout?.width ?? 1)
   const height = (layout?.height ?? 1)
@@ -66,7 +64,7 @@ const ScaleText = ({
   // const iphoneResolution = (1284 * 2778)
   const window = Dimensions.get('window')
   // height of iphone 12 pro max
-  let coef = (5556 / (window.height * pixelRatio))
+  let coef = (2778 / (window.height * pixelRatio))
   // let coef = (2778 / (window.height * pixelRatio))
   // if (coef > 1.5) {
   //   coef /= 2.3
@@ -99,12 +97,9 @@ const ScaleText = ({
         // useLog(`event x ${x} y ${y} width ${width} height ${height}`)
         setLayout({ width, height })
       }}
-      style={[{
+      style={{
         flex: 1,
-        // backgroundColor: 'cyan',
-      },
-        containerStyle
-      ]}
+      }}
     >
       {layout &&
         <View
@@ -126,8 +121,7 @@ const ScaleText = ({
               style: {
                 flex: 1,
                 justifyContent: 'center',
-                // justifyContent: 'flex-start',
-                // overflow: 'hidden',
+                ...containerStyle
               },
             }}
           >
@@ -146,26 +140,17 @@ const ScaleText = ({
                   textAlign: 'center',
                   color: '#fff',
                   fontSize: fontScaleDp,
-                  // overflow: 'hidden',
                   includeFontPadding: false,
-                  // backgroundColor: 'blue',
-                  // padding: 10,
                   ...textStyle
                 }
               }}
-            // adjustsFontSizeToFit={true}
-            // textBreakStrategy={'balanced'}
             >
-              {/* {`surface ${Math.round(heightContainerPx * widthContainerPx)}
-              text ${(children as string).length}
-              lol
-              `} */}
               {children}
             </Text>
           </Pressable>
-        </View>
+        </View >
       }
-    </View>
+    </View >
   )
 }
 
