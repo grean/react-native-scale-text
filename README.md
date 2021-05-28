@@ -19,7 +19,7 @@ yarn add @grean/react-native-scale-text
 ```
 
 ## Usage
-See Example app for testing.
+Simply use <ScaleText> Component almost like RN <Text> component.
 
 ```tsx
 const isLandscape = false
