@@ -9,7 +9,7 @@ The work is still in progress but you can use it and improve it if you want! PR 
 # Portrait
 ![Examples in protrait](./assets/portrait.jpg)
 # Landscape
-![Example in landscape](./assets/landscape.jpg) |
+![Example in landscape](./assets/landscape.jpg)
 
 ## Installation
 Using yarn:
@@ -77,7 +77,14 @@ cd example && yarn && yarn ios
 ```
 
 ## About
-If you want to eat well and healthy, i recommand you to check out my mobile app [Dietethic.net](https://dietethic.net)
+If you want to eat well and healthy, i recommand you to check out my mobile app [Dietethic.net](https://dietethic.net)<br/>
+<a align="center" href="https://github.com/grean?tab=followers">
+  <img src="https://img.shields.io/github/followers/grean?label=Follow%20%40grean&style=social" />
+</a>
+<br />
+<a align="center" href="https://twitter.com/reanGuillaume">
+  <img src="https://img.shields.io/twitter/follow/reanGuillaume?label=Follow%20%40reanGuillaume&style=social" />
+</a>
 
 ## License 
 MIT
