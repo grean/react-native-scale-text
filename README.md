@@ -49,8 +49,8 @@ interface ScaleTextProps {
   allowFontScaling?: boolean // false
   children: React.ReactNode // 'your text here'
   containerStyle?: {
-    * <View> style props
-    //default running values that you can override:
+    // * <View> style props
+    // default running values that you can override:
     flex: 1,
     justifyContent: 'center',
   }
@@ -58,8 +58,8 @@ interface ScaleTextProps {
   padding?: string // '0%'
   onPress?: () => void
   textStyle?: {
-    * <Text> style prop EXCEPT fontSize.
-    //default running values that you can override:
+    // * <Text> style prop EXCEPT fontSize.
+    // default running values that you can override:
     textAlign: 'center',
     color: '#fff',
     includeFontPadding: false,
