@@ -78,6 +78,15 @@ cd react-native-scale-text && yarn
 cd example && yarn && yarn ios
 ```
 
+## TODO
+If you want to improve the component:<br/>
+<ul>
+  <li>
+    More the device's screen has a dimennions square ratio near (~1) the less this component is usefull.
+  </li>
+</ul>
+
+
 ## About
 If you want to eat well and healthy, i recommand you to check out my mobile app [Dietethic.net](https://dietethic.net)<br/>
 
