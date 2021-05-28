@@ -18,18 +18,11 @@ Using yarn:
 yarn add @grean/react-native-scale-text
 ```
 
-## Testing
-See Expo example app for testing.
-```sh
-git clone https://github.com/grean/react-native-scale-text.git
-cd react-native-scale-text/example && yarn
-cd example && yarn ios
-```
-
 ## Usage
 See Example app for testing.
 
 ```tsx
+const isLandscape = false
 const fontSize = isLandscape ? 130 : 72
 const yourText = `Lorem ... magni.`
 
@@ -73,6 +66,14 @@ interface ScaleTextProps {
   }
   debug?: boolean // false
 }
+```
+
+## Testing
+See Expo example app for testing with hot-reload.
+```sh
+git clone https://github.com/grean/react-native-scale-text.git
+cd react-native-scale-text/example && yarn
+cd example && yarn ios
 ```
 
 ## About
