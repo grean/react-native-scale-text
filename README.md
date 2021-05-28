@@ -1,8 +1,6 @@
 # react-native-scale-text
-Scale-text is a component that allows you to keep the display of your texts consistent and independent of the device's display context.
-
-It's a full typescript component that uses a View wrapper with onLayout state to compute the font of the text relatively.
-
+Scale-text is a component that allows you to keep the display of your texts consistent and independent of the device's display context.<br/>
+It's a full typescript component that uses a View wrapper with onLayout state to compute the font of the text relatively.<br/>
 The work is still in progress but you can use it and improve it if you want! PR are welcome.
 
 [NPM package](https://www.npmjs.com/package/@grean/react-native-scale-text)
@@ -16,13 +14,13 @@ The work is still in progress but you can use it and improve it if you want! PR 
 ## Installation
 Using yarn:
 
-```bash
+```sh
 yarn add @grean/react-native-scale-text
 ```
 
 ## Testing
 See Expo example app for testing.
-```bash
+```sh
 git clone https://github.com/grean/react-native-scale-text.git
 cd react-native-scale-text/example && yarn
 cd example && yarn ios
@@ -31,7 +29,7 @@ cd example && yarn ios
 ## Usage
 See Example app for testing.
 
-```react
+```tsx
 const fontSize = isLandscape ? 130 : 72
 const yourText = `Lorem ... magni.`
 
@@ -53,7 +51,7 @@ const yourText = `Lorem ... magni.`
 ```
 
 ## Props
-```react
+```tsx
 interface ScaleTextProps {
   allowFontScaling?: boolean // false
   children: React.ReactNode // 'your text here'
