@@ -39,7 +39,7 @@ const ScaleText = ({
 }: ScaleTextProps) => {
   const [layout, setLayout] = useState<ParentLayout | null>(null);
   useLog(`ScaleText Layout widthDp ${layout?.width} heightDp ${layout?.height}`)
-  console.log(containerStyle)
+  // console.log(containerStyle)
 
   const width = (layout?.width ?? 1)
   const height = (layout?.height ?? 1)
