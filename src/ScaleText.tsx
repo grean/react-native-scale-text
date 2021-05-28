@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { View, Text, LayoutChangeEvent, PixelRatio, Pressable, Dimensions } from 'react-native'
+import { View, Text, LayoutChangeEvent, PixelRatio, Pressable, Dimensions, Platform } from 'react-native'
+
+function useLog(text: string, platform: string = 'android') {
+  if (platform === Platform.OS) {
+    console.log(text)
+  }
+}
 
 type ParentLayout = {
   width: number
@@ -21,19 +27,21 @@ interface ScaleTextProps {
   padding?: string
   onPress?: () => void
   textStyle?: TextStyleType
+  debug?: boolean
 }
 
 const ScaleText = ({
   allowFontScaling = false,
   children,
   containerStyle,
+  debug = false,
   fontSize,
   onPress,
   padding = '0%',
   textStyle,
 }: ScaleTextProps) => {
   const [layout, setLayout] = useState<ParentLayout | null>(null);
-  // useLog(`ScaleText Layout widthDp ${layout?.width} heightDp ${layout?.height}`)
+  useLog(`ScaleText Layout widthDp ${layout?.width} heightDp ${layout?.height}`)
 
   const width = (layout?.width ?? 1)
   const height = (layout?.height ?? 1)
@@ -58,7 +66,8 @@ const ScaleText = ({
   // const iphoneResolution = (1284 * 2778)
   const window = Dimensions.get('window')
   // height of iphone 12 pro max
-  let coef = (2778 / (window.height * pixelRatio))
+  let coef = (5556 / (window.height * pixelRatio))
+  // let coef = (2778 / (window.height * pixelRatio))
   // if (coef > 1.5) {
   //   coef /= 2.3
   // }
@@ -122,9 +131,13 @@ const ScaleText = ({
               },
             }}
           >
-            {/* <View style={{ position: 'absolute', top: -50 }}>
-              <Text style={{ fontSize: 20, color: '#000' }}>{fontScaleDp}</Text>
-          </View> */}
+            {debug &&
+              <View style={{ position: 'absolute', top: 0 }}>
+                <Text style={{ fontSize: fontScaleDp, color: '#000' }}>
+                  {`Calc. font: ${Math.round(fontScaleDp * 100) / 100} scaleFactor: ${pixelRatio}`}
+                </Text>
+              </View>
+            }
 
             <Text
               {...{

@@ -26,7 +26,7 @@ export default function useDimensions() {
       clearTimeout(timeoutId);
       // change width from the state object after 150 milliseconds
       timeoutId = setTimeout(() => {
-        console.log(`onChange ${height} ${width}`)
+        // console.log(`onChange ${height} ${width}`)
         setDimensions(dims)
       }, 10);
     };
