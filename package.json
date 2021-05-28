@@ -9,6 +9,12 @@
     "watch": "tsc -w > watchTypescript.log &",
     "release": "release-it"
   },
+  "keywords": [
+    "react-native",
+    "scale",
+    "text",
+    "responsive"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/grean/react-native-scale-text.git"
