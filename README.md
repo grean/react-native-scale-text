@@ -71,7 +71,7 @@ interface ScaleTextProps {
 ```
 
 ## Testing
-See Expo example app for testing with hot-reload.
+See Expo example app for testing with hot-reload, you can directly modify the code's component and see how it looks immediately.
 ```sh
 git clone https://github.com/grean/react-native-scale-text.git
 cd react-native-scale-text && yarn
