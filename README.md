@@ -82,7 +82,7 @@ cd example && yarn && yarn ios
 If you want to improve the component:<br/>
 <ul>
   <li>
-    More the device's screen has a dimennions square ratio near (~1) the less this component is usefull.
+    The more the device's window dimensions has a ratio near (~1) (like a square) the less this component is usefull. Mostly in landscape display context.
   </li>
 </ul>
 
