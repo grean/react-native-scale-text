@@ -76,7 +76,7 @@ interface ScaleTextProps {
 ```
 
 ## About
-If you want to eat well and healthy, i recommand you to check out my mobile app [dietethic](https://dietethic.net)
+If you want to eat well and healthy, i recommand you to check out my mobile app [Dietethic.net](https://dietethic.net)
 
 ## License 
 MIT
