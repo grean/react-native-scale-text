@@ -43,7 +43,7 @@ const yourText = `Lorem ... magni.`
 </ScaleText>
 ```
 
-## Props
+## Component props
 ```tsx
 interface ScaleTextProps {
   allowFontScaling?: boolean // false
