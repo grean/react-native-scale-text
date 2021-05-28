@@ -2,6 +2,7 @@
 Scale-text is a component that allows you to keep the display of your texts consistent and independent of the device's display context.<br/>
 It's a full typescript component that uses a View wrapper with onLayout state to compute the font of the text relatively.<br/>
 The work is still in progress but you can use it and improve it if you want! PR are welcome.<br/>
+<br/>
 <a align="center" href="https://www.npmjs.com/package/@grean/react-native-scale-text">
   <img src="https://img.shields.io/npm/v/@grean/react-native-scale-text" />
 </a>
