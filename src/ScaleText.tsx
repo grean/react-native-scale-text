@@ -1,5 +1,16 @@
 import React, { useState } from 'react'
-import { View, Text, LayoutChangeEvent, PixelRatio, Pressable, Dimensions, Platform } from 'react-native'
+import {
+  View,
+  Text,
+  LayoutChangeEvent,
+  PixelRatio,
+  Pressable,
+  Dimensions,
+  Platform,
+  TextStyle,
+  ViewStyle,
+  LayoutRectangle,
+} from 'react-native'
 
 function useLog(text: string, platform: string = 'android') {
   if (platform === Platform.OS) {
@@ -7,23 +18,14 @@ function useLog(text: string, platform: string = 'android') {
   }
 }
 
-type ParentLayout = {
-  width: number
-  height: number
-}
-
-export type ContairnerStyleType = {}
-
-export type TextStyleType = {}
-
 interface ScaleTextProps {
   allowFontScaling?: boolean
   children: React.ReactNode
-  containerStyle?: ContairnerStyleType
+  containerStyle?: ViewStyle
   fontSize: number
   padding?: string
   onPress?: () => void
-  textStyle?: TextStyleType
+  textStyle?: TextStyle
   debug?: boolean
 }
 
@@ -37,7 +39,7 @@ const ScaleText = ({
   padding = '0%',
   textStyle,
 }: ScaleTextProps) => {
-  const [layout, setLayout] = useState<ParentLayout | null>(null);
+  const [layout, setLayout] = useState<LayoutRectangle | null>(null);
   useLog(`ScaleText Layout widthDp ${layout?.width} heightDp ${layout?.height}`)
   // console.log(containerStyle)
 
@@ -93,9 +95,9 @@ const ScaleText = ({
 
   return (
     <View
-      onLayout={({ nativeEvent: { layout: { x, y, width, height } } }: LayoutChangeEvent) => {
+      onLayout={({ nativeEvent: { layout } }: LayoutChangeEvent) => {
         // useLog(`event x ${x} y ${y} width ${width} height ${height}`)
-        setLayout({ width, height })
+        setLayout(layout)
       }}
       style={{
         flex: 1,
