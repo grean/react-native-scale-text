@@ -10,6 +10,7 @@ import {
   TextStyle,
   ViewStyle,
   LayoutRectangle,
+  ScrollView,
 } from 'react-native'
 
 function useLog(text: string, platform: string = 'android') {
@@ -104,17 +105,22 @@ const ScaleText = ({
       }}
     >
       {layout &&
-        <View
+        <ScrollView
           style={{
             width: widthContainerPx / pixelRatio,
             height: heightContainerPx / pixelRatio,
             marginTop: paddingVerticalPx / pixelRatio,
+            // paddingTop: paddingVerticalPx / pixelRatio,
             marginLeft: paddingHorizontalPx / pixelRatio,
             // width: PixelRatio.roundToNearestPixel(widthContainerPx / pixelRatio),
             // height: PixelRatio.roundToNearestPixel(heightContainerPx / pixelRatio),
             // marginTop: PixelRatio.roundToNearestPixel(paddingVerticalPx / pixelRatio),
             // marginLeft: PixelRatio.roundToNearestPixel(paddingHorizontalPx / pixelRatio),
             // backgroundColor: 'yellow',
+          }}
+          contentContainerStyle={{
+            paddingTop: paddingVerticalPx / pixelRatio,
+            justifyContent: 'center',
           }}
         >
           <Pressable
@@ -150,9 +156,9 @@ const ScaleText = ({
               {children}
             </Text>
           </Pressable>
-        </View >
+        </ScrollView>
       }
-    </View >
+    </View>
   )
 }
 
