@@ -26,6 +26,7 @@ interface ScaleTextProps {
   fontSize: number
   padding?: string
   onPress?: () => void
+  showsVerticalScrollIndicator?: boolean
   textStyle?: TextStyle
   debug?: boolean
 }
@@ -38,6 +39,7 @@ const ScaleText = ({
   fontSize = 80,
   onPress,
   padding = '0%',
+  showsVerticalScrollIndicator = false,
   textStyle,
 }: ScaleTextProps) => {
   const [layout, setLayout] = useState<LayoutRectangle | null>(null);
@@ -106,22 +108,27 @@ const ScaleText = ({
     >
       {layout &&
         <ScrollView
-          style={{
-            width: widthContainerPx / pixelRatio,
-            height: heightContainerPx / pixelRatio,
-            marginTop: paddingVerticalPx / pixelRatio,
-            // paddingTop: paddingVerticalPx / pixelRatio,
-            marginLeft: paddingHorizontalPx / pixelRatio,
-            // width: PixelRatio.roundToNearestPixel(widthContainerPx / pixelRatio),
-            // height: PixelRatio.roundToNearestPixel(heightContainerPx / pixelRatio),
-            // marginTop: PixelRatio.roundToNearestPixel(paddingVerticalPx / pixelRatio),
-            // marginLeft: PixelRatio.roundToNearestPixel(paddingHorizontalPx / pixelRatio),
-            // backgroundColor: 'yellow',
-          }}
-          contentContainerStyle={{
-            paddingTop: paddingVerticalPx / pixelRatio,
-            justifyContent: 'center',
-          }}
+          {
+          ...{
+            showsVerticalScrollIndicator,
+            style: {
+              width: widthContainerPx / pixelRatio,
+              height: heightContainerPx / pixelRatio,
+              marginTop: paddingVerticalPx / pixelRatio,
+              // paddingTop: paddingVerticalPx / pixelRatio,
+              marginLeft: paddingHorizontalPx / pixelRatio,
+              // width: PixelRatio.roundToNearestPixel(widthContainerPx / pixelRatio),
+              // height: PixelRatio.roundToNearestPixel(heightContainerPx / pixelRatio),
+              // marginTop: PixelRatio.roundToNearestPixel(paddingVerticalPx / pixelRatio),
+              // marginLeft: PixelRatio.roundToNearestPixel(paddingHorizontalPx / pixelRatio),
+              // backgroundColor: 'yellow',
+            },
+            contentContainerStyle: {
+              paddingTop: paddingVerticalPx / pixelRatio,
+              justifyContent: 'center',
+            }
+          }
+          }// disableScrollViewPanResponder={true}
         >
           <Pressable
             {...{
