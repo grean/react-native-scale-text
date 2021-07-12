@@ -21,7 +21,7 @@ function useLog(text: string, platform: string = 'android') {
 
 interface ScaleTextProps {
   allowFontScaling?: boolean
-  children: React.ReactNode
+  children: React.ReactElement
   containerStyle?: ViewStyle
   fontSize: number
   padding?: string
@@ -147,8 +147,23 @@ const ScaleText = ({
                 </Text>
               </View>
             }
+            {
 
-            <Text
+              React.cloneElement(
+                children,
+                {
+                  allowFontScaling,
+                  style: {
+                    textAlign: 'center',
+                    color: '#fff',
+                    fontSize: fontScaleDp,
+                    includeFontPadding: false,
+                    ...textStyle
+                  }
+                }
+              )
+            }
+            {/* <Text
               {...{
                 allowFontScaling,
                 style: {
@@ -161,7 +176,7 @@ const ScaleText = ({
               }}
             >
               {children}
-            </Text>
+            </Text> */}
           </Pressable>
         </ScrollView>
       }
